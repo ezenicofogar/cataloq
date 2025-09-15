@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <meta name="robots" content="index, follow">
+    {% comment %}
+    <meta name="description" content="Descripción de la página pendiente.">
+    <meta property="og:title" content="Catálogo">
+    <meta property="og:description" content="Descripción de social-media pendiente.">
+    <meta property="og:image" content="{% static 'noimage.png' %}">
+    <meta property="og:url" content="{% url 'index' %}">
+    {% endcomment %}
+    <meta name="language" content="es">
+    <meta name="rating" content="general">
+    <!-- Tailwind -->
+    <link rel="preload" href="{% static 'tailwind/style.css' %}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'tailwind/style.css' %}">
+    </noscript>
+    {% if not noHtmx %}
+    <!-- Htmx -->
+    <script src="{% static 'htmx/htmx.min.js' %}"></script>
+    {% endif %}
+</head>
+
+<body hx-boost="true">
+
+    {% block body %}
+    {% endblock %}
+
+</body>
+
+</html>

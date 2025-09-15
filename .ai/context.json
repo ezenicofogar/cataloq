@@ -1,0 +1,145 @@
+{
+    "conceptual entity-relation diagram": {
+        "conceptual_model": {
+            "entities": [
+                {
+                    "name": "Product",
+                    "attributes": [
+                        "ProductID",
+                        "Name",
+                        "SKU",
+                        "Slug",
+                        "Description",
+                        "ShortDescription",
+                        "IsPublished",
+                        "DateCreated",
+                        "DateUpdated"
+                    ]
+                },
+                {
+                    "name": "Category",
+                    "attributes": [
+                        "CategoryID",
+                        "Name",
+                        "Slug",
+                        "Description"
+                    ]
+                },
+                {
+                    "name": "Brand",
+                    "attributes": [
+                        "BrandID",
+                        "Name",
+                        "LogoURL",
+                        "WebsiteURL",
+                        "Description"
+                    ]
+                },
+                {
+                    "name": "ProductImage",
+                    "attributes": [
+                        "ImageID",
+                        "ImagePath",
+                        "AltText",
+                        "Caption",
+                        "DisplayOrder"
+                    ]
+                },
+                {
+                    "name": "Attribute",
+                    "attributes": [
+                        "AttributeID",
+                        "Name"
+                    ]
+                },
+                {
+                    "name": "ProductAttribute",
+                    "attributes": [
+                        "ProductAttributeID",
+                        "Value"
+                    ]
+                },
+                {
+                    "name": "Collection",
+                    "attributes": [
+                        "CollectionID",
+                        "Name",
+                        "Slug",
+                        "Description"
+                    ]
+                }
+            ],
+            "relations": [
+                {
+                    "from_entity": "Category",
+                    "to_entity": "Product",
+                    "type": "One-to-Many",
+                    "description": "A Category can contain many Products. A Product belongs to one primary Category."
+                },
+                {
+                    "from_entity": "Category",
+                    "to_entity": "Category",
+                    "type": "One-to-Many",
+                    "description": "A self-referencing relationship to create a parent-child hierarchy of categories."
+                },
+                {
+                    "from_entity": "Brand",
+                    "to_entity": "Product",
+                    "type": "One-to-Many",
+                    "description": "A Brand can have many Products. A Product is made by one Brand."
+                },
+                {
+                    "from_entity": "Product",
+                    "to_entity": "ProductImage",
+                    "type": "One-to-Many",
+                    "description": "A Product can have multiple ProductImages. Each image is associated with exactly one Product."
+                },
+                {
+                    "from_entity": "Product",
+                    "to_entity": "ProductAttribute",
+                    "type": "Many-to-Many",
+                    "description": "Many Products are described by many specific attribute values (e.g., Color: Red)."
+                },
+                {
+                    "from_entity": "Attribute",
+                    "to_entity": "ProductAttribute",
+                    "type": "One-to-Many",
+                    "description": "An Attribute (e.g., 'Color') can be assigned as a ProductAttribute to many different products."
+                },
+                {
+                    "from_entity": "Product",
+                    "to_entity": "Collection",
+                    "type": "Many-to-Many",
+                    "junction_entity": "ProductCollectionLink",
+                    "description": "A Product can be part of many Collections, and a Collection can contain many Products."
+                }
+            ]
+        }
+    },
+    "tasks": [
+        {
+            "name": "Project architecture",
+            "description": "Review the DER to consider how the project will be structured.",
+            "status": "done",
+            "result": "Considering the DER, we decided to create a single Django application called 'catalogue'."
+        },
+        {
+            "name": "Catalogue App Models",
+            "description": "Start creating the Django models on 'models.py'.",
+            "status": "done",
+            "result": "'models.py' was created."
+        },
+        {
+            "name": "Catalogue App Admin",
+            "description": "Start creating the Model Admins on 'admin.py'.",
+            "status": "done",
+            "result": "'admin.py' was created."
+        },
+        {
+            "name": "HTMX Helpers",
+            "description": "Create a middleware to extract htmx headers from the request. Also create a View Mixin that ignores no-htmx requests on a view.",
+            "status": "done",
+            "result": "'htmx/middleware.py' and 'htmx/mixins.py' were created."
+        }
+    ]
+}
