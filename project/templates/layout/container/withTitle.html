@@ -1,0 +1,9 @@
+{% extends 'layout/standard.html' %}
+
+{% block content %}
+<main class="page-container">
+    <h1 class="section-title">{{ title|capfirst }}</h1>
+    {% block contained %}
+    {% endblock %}
+</main>
+{% endblock %}

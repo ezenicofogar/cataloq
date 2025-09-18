@@ -1,0 +1,11 @@
+{% extends 'layout/container/withTitle.html' %}
+
+{% block contained %}
+<ul>
+    {% for collection in queryset %}
+    <li class="pt-3">{{ collection.name }}</li>
+    {% empty %}
+    <li>No hay colecciones.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

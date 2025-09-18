@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Page -->
@@ -17,6 +17,10 @@
     {% endcomment %}
     <meta name="language" content="es">
     <meta name="rating" content="general">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <!-- Tailwind -->
     <link rel="preload" href="{% static 'tailwind/style.css' %}" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
@@ -26,6 +30,7 @@
     {% if not noHtmx %}
     <!-- Htmx -->
     <script src="{% static 'htmx/htmx.min.js' %}"></script>
+    <script> htmx.config.globalViewTransitions = true; </script>
     {% endif %}
 </head>
 

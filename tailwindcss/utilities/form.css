@@ -1,0 +1,23 @@
+@layer utilities {
+    .form label {
+        font-weight: var(--font-weight-light);
+        font-size: var(--text-lg);
+        display: block;
+    }
+    
+    .form .helptext {
+        font-weight: var(--font-weight-light);
+        font-size: var(--text-sm);
+    }
+    
+    .form input:not([type="submit"]):not([type="reset"]) {
+        font-size: var(--text-xl);
+        border-radius: var(--radius-md);
+        padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
+        @apply
+        outline-2
+        -outline-offset-2 focus:outline-offset-0
+        outline-transparent focus:outline-focal-500
+        transition-[outline-offset,outline-color];
+    }
+}

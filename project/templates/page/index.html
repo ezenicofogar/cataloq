@@ -1,5 +1,10 @@
 {% extends 'layout/standard.html' %}
 
 {% block content %}
-<h1>Cataloq</h1>
+<section>
+    <h1 class="text-2xl">Index</h1>
+    <a href="{% url 'user:login' %}">login</a>
+    <a href="{% url 'category-list' %}">categorías</a>
+    <a href="{% url 'collection-list' %}">colecciones</a>
+</section>
 {% endblock %}

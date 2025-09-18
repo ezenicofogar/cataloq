@@ -1,0 +1,19 @@
+{% extends 'layout/standard.html' %}
+
+{% block content %}
+<section>
+    <form action="." method="post" class="form">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+        <div>
+            <input type="reset" value="Reset">
+        </div>
+        <div>
+            <a href="{% url 'index' %}">Index</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

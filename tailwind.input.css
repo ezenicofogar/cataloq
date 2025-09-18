@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+    font-optical-sizing: auto;
+}
+@view-transition {
+    navigation: auto;
+}
+
+@theme {
+    --default-font-family: "Outfit", sans-serif;
+
+    --color-focal-50: oklch(0.981 0.004 258.37);
+    --color-focal-100: oklch(0.949 0.012 247.93);
+    --color-focal-200: oklch(0.869 0.032 251.14);
+    --color-focal-300: oklch(0.792 0.053 246.73);
+    --color-focal-400: oklch(0.713 0.07 246.83);
+    --color-focal-500: oklch(0.632 0.061 245.69);
+    --color-focal-600: oklch(0.533 0.051 245.89);
+    --color-focal-700: oklch(0.439 0.041 245);
+    --color-focal-800: oklch(0.337 0.032 245.37);
+    --color-focal-900: oklch(0.242 0.023 243.61);
+    --color-focal-950: oklch(0.187 0.019 245.44);
+}
+
+@utility mob-p-* {
+    padding: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-px-* {
+    padding-inline: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-inline: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-py-* {
+    padding-block: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-block: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-pt-* {
+    padding-top: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-top: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-pr-* {
+    padding-right: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-right: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-pb-* {
+    padding-bottom: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-bottom: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+@utility mob-pl-* {
+    padding-left: calc(var(--spacing) * --value(integer));
+    @media (width >= 48rem) {
+        padding-left: calc(var(--spacing) * --value(integer) * 2);
+    }
+}
+
+
+
+@layer components {
+    .section-title {
+        @apply text-3xl md:text-4xl font-medium;
+    }
+}
+
+@layer utilities {
+    .page-container {
+        max-width: var(--breakpoint-2xl);
+        @apply mx-auto mob-px-3 mob-py-4;
+    }
+}
+
+@import "./tailwindcss/utilities/form.css";

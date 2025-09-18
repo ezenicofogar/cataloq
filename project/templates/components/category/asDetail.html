@@ -1,0 +1,16 @@
+{% if category.children.count %}
+<details>
+    <summary>
+        {% include 'components/category/linkToProducts.html' %}
+    </summary>
+    <ul class="pl-6">
+        {% for sub in category.children.all %}
+        <li class="pt-3">
+            {% include 'components/category/asDetail.html' with category=sub %}
+        </li>
+        {% endfor %}
+    </ul>
+</details>
+{% else %}
+{% include 'components/category/linkToProducts.html' %}
+{% endif %}

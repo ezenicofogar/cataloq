@@ -1,0 +1,13 @@
+{% extends 'layout/container/withTitle.html' %}
+
+{% block contained %}
+<ul class="text-xl">
+    {% for category in object_list %}
+    <li class="pt-3">
+        {% include 'components/category/asDetail.html' %}
+    </li>
+    {% empty %}
+    <li>No hay categorías.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
