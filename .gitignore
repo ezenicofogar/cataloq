@@ -220,6 +220,7 @@ collected_static/
 
 # Pnpm
 pnpm-lock.yaml
+pnpm-workspace.yaml
 node_modules/
 
 # Documentation

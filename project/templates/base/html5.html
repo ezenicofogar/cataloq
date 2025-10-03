@@ -45,7 +45,13 @@
     {% endif %}
 </head>
 
-<body hx-boost="true" class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+<body hx-boost="true" hx-indicator="#full-page-indicator" class="min-h-screen grid grid-rows-[auto_1fr_auto] relative">
+
+    <div id="full-page-indicator" class="htmx-indicator absolute z-[500]">
+        <div class="h-[100lvh] w-[100lvw] backdrop-blur fixed flex justify-center align-middle">
+            <span class="loading loading-spinner loading-xl"></span>
+        </div>
+    </div>
 
     {% block body %}
     {% endblock %}

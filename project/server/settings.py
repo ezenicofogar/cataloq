@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'htmx.middleware.HtmxMiddleware',
+    'server.middleware.DelayMiddleware',
 ]
 
 ROOT_URLCONF = 'server.urls'
