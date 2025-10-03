@@ -1,0 +1,20 @@
+{
+  "name": "cataloq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "pnpx @tailwindcss/cli -i ./tailwind.input.css -o ./project/static/tailwind/style.css --minify",
+    "watch:css": "pnpx @tailwindcss/cli -i ./tailwind.input.css -o ./project/static/tailwind/style.css --minify --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.0",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "daisyui": "^5.1.26",
+    "tailwindcss": "^4.1.14"
+  }
+}

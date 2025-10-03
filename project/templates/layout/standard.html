@@ -2,6 +2,9 @@
 
 {% block body %}
     {% include 'components/header.html' %}
-    {% block content %}
-    {% endblock %}
+    <main class="page-main-container bg-base-200">
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% include 'components/footer.html' %}
 {% endblock %}

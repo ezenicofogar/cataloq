@@ -21,5 +21,13 @@ pipenv run code .
 ## Useful commands
 
 ```sh
-tailwindcss -i ./tailwind.input.css -o ./project/static/tailwind/style.css --minify --watch
+pnpm install
+```
+
+```sh
+pnpm run build:css
+```
+
+```sh
+pnpm run watch:css
 ```

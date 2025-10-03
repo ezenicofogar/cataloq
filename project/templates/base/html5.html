@@ -9,14 +9,25 @@
     <title>Catálogo</title>
     <meta name="robots" content="index, follow">
     {% comment %}
-    <meta name="description" content="Descripción de la página pendiente.">
-    <meta property="og:title" content="Catálogo">
-    <meta property="og:description" content="Descripción de social-media pendiente.">
-    <meta property="og:image" content="{% static 'noimage.png' %}">
-    <meta property="og:url" content="{% url 'index' %}">
+        <meta name="description" content="Descripción de la página pendiente.">
+        <meta property="og:title" content="Catálogo">
+        <meta property="og:description" content="Descripción de social-media pendiente.">
+        <meta property="og:image" content="{% static 'noimage.png' %}">
+        <meta property="og:url" content="{% url 'index' %}">
     {% endcomment %}
     <meta name="language" content="es">
     <meta name="rating" content="general">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="64x64">
+    {% comment %}
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="16x16">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="32x32">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="48x48">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="96x96">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="128x128">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="180x180">
+        <link rel="shortcut icon" href="{% static 'favicon/running-shoe.png' %}" type="image/png" sizes="192x192">
+    {% endcomment %}
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +45,7 @@
     {% endif %}
 </head>
 
-<body hx-boost="true">
+<body hx-boost="true" class="min-h-screen grid grid-rows-[auto_1fr_auto]">
 
     {% block body %}
     {% endblock %}

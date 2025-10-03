@@ -1,5 +1,42 @@
-<header id="component-header">
-    <nav class="flex mob-p-2 bg-gray-400">
-        <a href="{% url 'index' %}">Index</a>
-    </nav>
+<header id="component-header" class="drawer">
+
+    <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
+
+    <div class="drawer-content navbar shadow">
+        <label for="sidebar-drawer" class="drawer-button flex-none btn btn-ghost">
+            <svg class="w-[1.75em] h-[1.75em]"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 6h10" /><path d="M4 12h16" /><path d="M7 12h13" /><path d="M4 18h10" /></svg>
+        </label>
+        <nav class="flex-1">
+            <a href="{% url 'index' %}" class="btn btn-ghost btn-lg text-2xl">Tienda</a>
+        </nav>
+        {% if user.is_authenticated %}
+        <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost text-xl">Cart</div>
+            <div tabindex="0" class="dropdown-content bg-base-200 z-1 mt-2">
+                <p class="">XD</p>
+            </div>
+        </div>
+        <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost text-xl">User</div>
+            <div tabindex="0" class="dropdown-content bg-base-200 z-1 mt-2">
+                <p class="">XD</p>
+            </div>
+        </div>
+        {% else %}
+        <a href="{% url 'user:login' %}" class="btn btn-primary shadow text-lg">Ingresar</a>
+        {% endif %}
+    </div>
+
+    <div class="drawer-side">
+        <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
+            <li><label for="sidebar-drawer" class="drawer-button text-xl">
+                <svg class="w-[1em] h-[1em] inline-flex"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+                Close
+            </label></li>
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
+        </ul>
+    </div>
+
 </header>

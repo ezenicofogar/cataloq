@@ -218,8 +218,13 @@ __marimo__/
 # Django collectstatic
 collected_static/
 
+# Pnpm
+pnpm-lock.yaml
+node_modules/
+
 # Documentation
 #  Fast Reference
 .docs/
+
 #  Drawio backups
 docs/**/*.drawio.bkp
