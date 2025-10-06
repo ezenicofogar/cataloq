@@ -133,3 +133,8 @@ STATIC_ROOT = BASE_DIR.parent / 'collected_static'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Auth views
+LOGIN_REDIRECT_URL = 'user:profile'
+LOGOUT_REDIRECT_URL = 'index'

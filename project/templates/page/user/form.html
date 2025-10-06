@@ -3,12 +3,12 @@
 {% block content %}
 <section class="py-8 px-2">
     <form action="." method="post" class="styled-form card p-4 bg-base-100 shadow max-w-lg mx-auto">
-        <h1 class="text-3xl">Formulario</h1>
+        <h1 class="text-3xl">{{ form_title }}</h1>
         {% csrf_token %}
         {{ form }}
         <div class="flex-row gap-2">
             <input class="grow text-xl btn" type="reset" value="Limpiar">
-            <input class="grow text-xl btn btn-primary" type="submit" value="Enviar">
+            <input class="grow text-xl btn btn-primary" type="submit" value="{{ form_action|default:'Enviar' }}">
         </div>
     </form>
 </section>

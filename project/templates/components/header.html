@@ -18,8 +18,8 @@
         </div>
         <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost text-xl">User</div>
-            <div tabindex="0" class="dropdown-content bg-base-200 z-1 mt-2">
-                <p class="">XD</p>
+            <div tabindex="0" class="dropdown-content bg-base-100 p-4 card shadow z-1 mt-2">
+                <a href="{% url 'user:profile' %}" class="btn btn-ghost">Perfil</a>
             </div>
         </div>
         {% else %}
